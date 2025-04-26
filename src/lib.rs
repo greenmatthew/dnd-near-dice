@@ -1,4 +1,5 @@
 pub mod die;
+pub mod dice_pool;
 
 #[cfg(test)]
 mod tests {

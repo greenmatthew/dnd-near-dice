@@ -9,6 +9,7 @@ pub struct Die {
 impl Die {
     #[must_use]
     pub const fn new(sides: u32) -> Self {
+        assert!(sides > 0);
         Self {
             sides
         }
