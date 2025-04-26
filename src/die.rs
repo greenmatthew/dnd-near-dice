@@ -1,5 +1,5 @@
 use std::fmt;
-use rand::thread_rng;
+use rand::rng;
 use rand::Rng;
 
 pub struct Die {
@@ -14,8 +14,8 @@ impl Die {
     }
 
     pub fn roll(&self) -> u32 {
-        let mut rng = thread_rng();
-        rng.gen_range(1..=self.sides)
+        let mut rng = rng();
+        rng.random_range(1..=self.sides)
     }
 }
 
