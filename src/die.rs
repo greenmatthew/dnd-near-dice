@@ -7,12 +7,14 @@ pub struct Die {
 }
 
 impl Die {
-    pub fn new(sides: u32) -> Self {
+    #[must_use]
+    pub const fn new(sides: u32) -> Self {
         Self {
             sides
         }
     }
 
+    #[must_use]
     pub fn roll(&self) -> u32 {
         let mut rng = rng();
         rng.random_range(1..=self.sides)
