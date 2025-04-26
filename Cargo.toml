@@ -2,5 +2,18 @@
 name = "dnd-near-dice"
 version = "0.1.0"
 edition = "2024"
+authors = ["Matthew Green"]
+description = "A RPG dice rolling crate for my personal D&D web app."
+
+[[bin]]
+name = "dnd-near-dice"
+path = "src/main.rs"
+
+[lib]
+name = "dnd_near_dice"
+path = "src/lib.rs"
 
 [dependencies]
+chrono = "0.4.40"
+rand = "0.9.1"
+regex = "1.11.1"
