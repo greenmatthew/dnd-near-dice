@@ -1,6 +1,6 @@
 use std::fmt;
 use crate::die::Die;
-use crate::dice_pool::DicePool;
+use crate::dice_pool::{DicePool, Operation};
 use crate::result::RollResult;
 
 pub enum DiceExpressionComponent {
@@ -38,6 +38,11 @@ impl DiceExpression {
 
     pub fn add_pool_by_values(&mut self, count: u32, sides: u32) -> &mut Self {
         self.tokens.push(DiceExpressionComponent::DicePool(DicePool::new(sides, count)));
+        self
+    }
+
+    pub fn add_pool_by_values_with_op(&mut self, count: u32, sides: u32, op: Operation) -> &mut Self {
+        self.tokens.push(DiceExpressionComponent::DicePool(DicePool::new_with_op(count, sides, op)));
         self
     }
 
