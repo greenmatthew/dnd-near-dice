@@ -8,6 +8,11 @@ MINUS  : '-' ;
 MULT   : '*' ;
 DIV    : '/' ;
 
-DICE   : 'd' ;              // The 'd' in dice notation
+DIE   : 'd' ;               // The 'd' in dice notation
 
 WS : [ \t\r\n]+ -> skip ;   // Ignore whitespace
+
+expression : factor ((PLUS | MINUS) factor)* ;
+factor     : (term | dice) ((MULT | DIV) (term | dice))* ;
+dice       : term? DIE term ;
+term       : NUMBER ;
