@@ -11,4 +11,8 @@
     <PackageReference Include="Antlr4BuildTasks" Version="12.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Antlr4 Include="DiceExpression.g4" />
+  </ItemGroup>
+
 </Project>
